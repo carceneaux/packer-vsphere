@@ -111,10 +111,8 @@ source "vsphere-iso" "ubuntu" {
 #   ssh_proxy_port     = var.communicator_proxy_port
 #   ssh_proxy_username = var.communicator_proxy_username
 #   ssh_proxy_password = var.communicator_proxy_password
-  # ssh_username       = var.build_username
-  # ssh_password       = var.build_password
-  ssh_username       = "ubuntu"
-  ssh_password       = "ubuntu"
+  ssh_username       = var.build_username
+  ssh_password       = var.build_password
   ssh_port           = var.communicator_port
   ssh_timeout        = var.communicator_timeout
 
