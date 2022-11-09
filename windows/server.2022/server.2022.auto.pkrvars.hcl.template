@@ -1,0 +1,27 @@
+/*
+    DESCRIPTION:
+    Microsoft Windows Server 2022 variables used by the Packer Plugin for VMware vSphere (vsphere-iso).
+*/
+
+// full path to ISO
+// i.e. [datastore] folder/sample.iso
+iso_path                = "[isos] Win_Server_2022.iso"
+
+// Virtual Machine Hardware Settings
+vm_name                 = "windows_server_2022"
+vm_cpu_num              = 2
+vm_disk_size            = 40960
+vm_mem_size             = 4096
+
+// vSphere Environment Settings
+vsphere_server          = "vcenter.contoso.local"
+vsphere_user            = "jsmith@contoso.local"
+vsphere_password        = "password"
+vsphere_cluster         = "Cluster"
+vsphere_datacenter      = "Datacenter"
+vsphere_datastore       = "datastore-01"
+vsphere_folder          = "templates"
+vsphere_network         = "VM Network"
+
+// VM Guest OS Settings
+winadmin_password       = "password"
