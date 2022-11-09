@@ -288,15 +288,15 @@ variable "vm_boot_wait" {
   description = "The time to wait before boot."
 }
 
-# variable "common_ip_wait_timeout" {
-#   type        = string
-#   description = "Time to wait for guest operating system IP address response."
-# }
+variable "common_ip_wait_timeout" {
+  type        = string
+  description = "Time to wait for guest operating system IP address response."
+}
 
-# variable "common_shutdown_timeout" {
-#   type        = string
-#   description = "Time to wait for guest operating system shutdown."
-# }
+variable "common_shutdown_timeout" {
+  type        = string
+  description = "Time to wait for guest operating system shutdown."
+}
 
 // Communicator Settings and Credentials
 
