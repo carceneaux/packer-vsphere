@@ -16,7 +16,7 @@ variable "vm_mem_size" {
 
 variable "vm_name" {
   type    = string
-  default = "windows_server_2019_std"
+  default = "windows_server_2019"
 }
 
 variable "vsphere_server" {

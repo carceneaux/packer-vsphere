@@ -7,7 +7,7 @@ packer {
   }
 }
 
-source "vsphere-iso" "server-2019-std" {
+source "vsphere-iso" "server-2019" {
   CPUs                 = "${var.vm_cpu_num}"
   RAM                  = "${var.vm_mem_size}"
   CPU_hot_plug         = true
@@ -48,7 +48,7 @@ source "vsphere-iso" "server-2019-std" {
 }
 
 build {
-  sources = ["source.vsphere-iso.server-2019-std"]
+  sources = ["source.vsphere-iso.server-2019"]
 
   provisioner "windows-shell" {
     inline = ["ipconfig"]
