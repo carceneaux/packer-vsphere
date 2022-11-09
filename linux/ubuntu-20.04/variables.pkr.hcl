@@ -318,11 +318,11 @@ variable "build_password_encrypted" {
   sensitive   = true
 }
 
-variable "build_key" {
-  type        = string
-  description = "The public key to login to the guest operating system."
-  sensitive   = true
-}
+# variable "build_key" {
+#   type        = string
+#   description = "The public key to login to the guest operating system."
+#   sensitive   = true
+# }
 
 # variable "communicator_proxy_host" {
 #   type        = string
