@@ -85,7 +85,7 @@ source "vsphere-iso" "ubuntu" {
   notes                = local.build_description
 
   // Removable Media Settings
-  iso_paths    = var.iso_path
+  iso_paths    = [var.iso_path]
 #   http_content = var.common_data_source == "http" ? local.data_source_content : null
 #   cd_content   = var.common_data_source == "disk" ? local.data_source_content : null
 #   cd_label     = var.common_data_source == "disk" ? "cidata" : null
