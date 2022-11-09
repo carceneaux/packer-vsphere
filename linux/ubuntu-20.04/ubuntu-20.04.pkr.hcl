@@ -39,7 +39,7 @@ locals {
       vm_guest_os_timezone     = var.vm_guest_os_timezone
     })
   }
-  data_source_command = "ds=\"nocloud\""
+  # data_source_command = "ds=\"nocloud\""
   vm_name             = "${var.vm_guest_os_family}-${var.vm_guest_os_name}-${var.vm_guest_os_version}-v${local.build_version}"
   bucket_name         = replace("${var.vm_guest_os_family}-${var.vm_guest_os_name}-${var.vm_guest_os_version}", ".", "")
   bucket_description  = "${var.vm_guest_os_family} ${var.vm_guest_os_name} ${var.vm_guest_os_version}"
@@ -97,13 +97,9 @@ source "vsphere-iso" "ubuntu" {
   boot_order    = var.vm_boot_order
   boot_wait     = var.vm_boot_wait
   boot_command = [
-    "<esc><wait>",
-    "linux /casper/vmlinuz --- autoinstall ${local.data_source_command}",
-    "<enter><wait>",
-    "initrd /casper/initrd",
-    "<enter><wait>",
-    "boot",
-    "<enter>"
+    "<enter><enter><f6><esc><wait> ",
+    "autoinstall ds=nocloud-net;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/",
+    "<enter><wait>"
   ]
   ip_wait_timeout  = var.common_ip_wait_timeout
   shutdown_command = "echo '${var.build_password}' | sudo -S -E shutdown -P now"
