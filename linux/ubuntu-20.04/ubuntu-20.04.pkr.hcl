@@ -40,7 +40,7 @@ locals {
     })
   }
   # data_source_command = "ds=\"nocloud\""
-  vm_name             = "${var.vm_guest_os_family}-${var.vm_guest_os_name}-${var.vm_guest_os_version}-v${local.build_version}"
+  vm_name             = "${var.vm_guest_os_name}-${var.vm_guest_os_version}-v${local.build_version}"
   bucket_name         = replace("${var.vm_guest_os_family}-${var.vm_guest_os_name}-${var.vm_guest_os_version}", ".", "")
   bucket_description  = "${var.vm_guest_os_family} ${var.vm_guest_os_name} ${var.vm_guest_os_version}"
 }
