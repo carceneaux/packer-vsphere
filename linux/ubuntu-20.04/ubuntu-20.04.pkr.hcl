@@ -145,7 +145,7 @@ source "vsphere-iso" "ubuntu" {
 #       output_directory = local.ovf_export_path
 #     }
 #   }
-# }
+}
 
 //  BLOCK: build
 //  Defines the builders to run, provisioners, and post-processors.
