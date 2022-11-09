@@ -14,3 +14,10 @@ This repository contains builds to be used when generating various vSphere templ
 * Edit the file that was just renamed and set the variables according to your environment
 * Run `packer init .` to ensure required Packer plugins are present
 * Run `packer build .` to generate the VMware template as defined in the build configuration
+
+## References
+
+This project leveraged inspiration and code from the following sources:
+
+* [https://github.com/vmware-samples/packer-examples-for-vsphere](https://github.com/vmware-samples/packer-examples-for-vsphere)
+* [https://github.com/StefanZ8n/packer-ws2022](https://github.com/StefanZ8n/packer-ws2022)
