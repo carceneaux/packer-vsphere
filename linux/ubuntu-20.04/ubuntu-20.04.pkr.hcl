@@ -163,9 +163,9 @@ build {
     extra_arguments = [
       "--extra-vars", "display_skipped_hosts=false",
       "--extra-vars", "BUILD_USERNAME=${var.build_username}",
-      "--extra-vars", "BUILD_SECRET='${var.build_key}'",
-      "--extra-vars", "ANSIBLE_USERNAME=${var.ansible_username}",
-      "--extra-vars", "ANSIBLE_SECRET='${var.ansible_key}'",
+    #   "--extra-vars", "BUILD_SECRET='${var.build_key}'",
+      "--extra-vars", "ANSIBLE_USERNAME=${var.build_username}",
+    #   "--extra-vars", "ANSIBLE_SECRET='${var.ansible_key}'",
     ]
   }
 
@@ -174,7 +174,7 @@ build {
     strip_path = true
     strip_time = true
     custom_data = {
-      ansible_username         = var.ansible_username
+      ansible_username         = var.build_username
       build_username           = var.build_username
       build_date               = local.build_date
       build_version            = local.build_version
