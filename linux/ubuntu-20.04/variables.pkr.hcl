@@ -361,17 +361,17 @@ variable "communicator_timeout" {
 
 // Ansible Credentials
 
-variable "ansible_username" {
-  type        = string
-  description = "The username for Ansible to login to the guest operating system. (e.g. 'ansible')"
-  sensitive   = true
-}
+# variable "ansible_username" {
+#   type        = string
+#   description = "The username for Ansible to login to the guest operating system. (e.g. 'ansible')"
+#   sensitive   = true
+# }
 
-variable "ansible_key" {
-  type        = string
-  description = "The public key for Ansible to login to the guest operating system."
-  sensitive   = true
-}
+# variable "ansible_key" {
+#   type        = string
+#   description = "The public key for Ansible to login to the guest operating system."
+#   sensitive   = true
+# }
 
 // HCP Packer Settings
 
