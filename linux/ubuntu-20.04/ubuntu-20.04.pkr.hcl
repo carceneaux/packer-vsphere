@@ -191,7 +191,7 @@ build {
       vsphere_cluster          = var.vsphere_cluster
       vsphere_datacenter       = var.vsphere_datacenter
       vsphere_datastore        = var.vsphere_datastore
-      vsphere_endpoint         = var.vsphere_endpoint
+      vsphere_endpoint         = var.vsphere_server
       vsphere_folder           = var.vsphere_folder
     }
   }

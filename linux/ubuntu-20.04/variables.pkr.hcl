@@ -8,12 +8,12 @@
 
 // vSphere Credentials
 
-variable "vsphere_endpoint" {
+variable "vsphere_server" {
   type        = string
   description = "The fully qualified domain name or IP address of the vCenter Server instance. (e.g. 'sfo-w01-vc01.sfo.rainpole.io')"
 }
 
-variable "vsphere_username" {
+variable "vsphere_user" {
   type        = string
   description = "The username to login to the vCenter Server instance. (e.g. 'svc-packer-vsphere@rainpole.io')"
   sensitive   = true
@@ -159,123 +159,123 @@ variable "vm_network_card" {
   default     = "vmxnet3"
 }
 
-variable "common_vm_version" {
-  type        = number
-  description = "The vSphere virtual hardware version. (e.g. '19')"
-}
+# variable "common_vm_version" {
+#   type        = number
+#   description = "The vSphere virtual hardware version. (e.g. '19')"
+# }
 
-variable "common_tools_upgrade_policy" {
-  type        = bool
-  description = "Upgrade VMware Tools on reboot."
-  default     = true
-}
+# variable "common_tools_upgrade_policy" {
+#   type        = bool
+#   description = "Upgrade VMware Tools on reboot."
+#   default     = true
+# }
 
-variable "common_remove_cdrom" {
-  type        = bool
-  description = "Remove the virtual CD-ROM(s)."
-  default     = true
-}
+# variable "common_remove_cdrom" {
+#   type        = bool
+#   description = "Remove the virtual CD-ROM(s)."
+#   default     = true
+# }
 
 // Template and Content Library Settings
 
-variable "common_template_conversion" {
-  type        = bool
-  description = "Convert the virtual machine to template. Must be 'false' for content library."
-  default     = false
-}
+# variable "common_template_conversion" {
+#   type        = bool
+#   description = "Convert the virtual machine to template. Must be 'false' for content library."
+#   default     = false
+# }
 
-variable "common_content_library_name" {
-  type        = string
-  description = "The name of the target vSphere content library, if used. (e.g. 'sfo-w01-cl01-lib01')"
-  default     = null
-}
+# variable "common_content_library_name" {
+#   type        = string
+#   description = "The name of the target vSphere content library, if used. (e.g. 'sfo-w01-cl01-lib01')"
+#   default     = null
+# }
 
-variable "common_content_library_ovf" {
-  type        = bool
-  description = "Export to content library as an OVF template."
-  default     = true
-}
+# variable "common_content_library_ovf" {
+#   type        = bool
+#   description = "Export to content library as an OVF template."
+#   default     = true
+# }
 
-variable "common_content_library_destroy" {
-  type        = bool
-  description = "Delete the virtual machine after exporting to the content library."
-  default     = true
-}
+# variable "common_content_library_destroy" {
+#   type        = bool
+#   description = "Delete the virtual machine after exporting to the content library."
+#   default     = true
+# }
 
-variable "common_content_library_skip_export" {
-  type        = bool
-  description = "Skip exporting the virtual machine to the content library. Option allows for testing / debugging without saving the machine image."
-  default     = false
-}
+# variable "common_content_library_skip_export" {
+#   type        = bool
+#   description = "Skip exporting the virtual machine to the content library. Option allows for testing / debugging without saving the machine image."
+#   default     = false
+# }
 
-// OVF Export Settings
+# // OVF Export Settings
 
-variable "common_ovf_export_enabled" {
-  type        = bool
-  description = "Enable OVF artifact export."
-  default     = false
-}
+# variable "common_ovf_export_enabled" {
+#   type        = bool
+#   description = "Enable OVF artifact export."
+#   default     = false
+# }
 
-variable "common_ovf_export_overwrite" {
-  type        = bool
-  description = "Overwrite existing OVF artifact."
-  default     = true
-}
+# variable "common_ovf_export_overwrite" {
+#   type        = bool
+#   description = "Overwrite existing OVF artifact."
+#   default     = true
+# }
 
-// Removable Media Settings
+# // Removable Media Settings
 
-variable "common_iso_datastore" {
-  type        = string
-  description = "The name of the source vSphere datastore for ISO images. (e.g. 'sfo-w01-cl01-nfs01')"
-}
+# variable "common_iso_datastore" {
+#   type        = string
+#   description = "The name of the source vSphere datastore for ISO images. (e.g. 'sfo-w01-cl01-nfs01')"
+# }
 
-variable "iso_url" {
-  type        = string
-  description = "The URL source of the ISO image. (e.g. 'https://artifactory.rainpole.io/.../os.iso')"
-}
+# variable "iso_url" {
+#   type        = string
+#   description = "The URL source of the ISO image. (e.g. 'https://artifactory.rainpole.io/.../os.iso')"
+# }
 
 variable "iso_path" {
   type        = string
   description = "The path on the source vSphere datastore for ISO image. (e.g. 'iso/linux/ubuntu')"
 }
 
-variable "iso_file" {
-  type        = string
-  description = "The file name of the ISO image used by the vendor. (e.g. 'ubuntu-<version>-live-server-amd64.iso')"
-}
+# variable "iso_file" {
+#   type        = string
+#   description = "The file name of the ISO image used by the vendor. (e.g. 'ubuntu-<version>-live-server-amd64.iso')"
+# }
 
-variable "iso_checksum_type" {
-  type        = string
-  description = "The checksum algorithm used by the vendor. (e.g. 'sha256')"
-}
+# variable "iso_checksum_type" {
+#   type        = string
+#   description = "The checksum algorithm used by the vendor. (e.g. 'sha256')"
+# }
 
-variable "iso_checksum_value" {
-  type        = string
-  description = "The checksum value provided by the vendor."
-}
+# variable "iso_checksum_value" {
+#   type        = string
+#   description = "The checksum value provided by the vendor."
+# }
 
 // Boot Settings
 
-variable "common_data_source" {
-  type        = string
-  description = "The provisioning data source. (e.g. 'http' or 'disk')"
-}
+# variable "common_data_source" {
+#   type        = string
+#   description = "The provisioning data source. (e.g. 'http' or 'disk')"
+# }
 
-variable "common_http_ip" {
-  type        = string
-  description = "Define an IP address on the host to use for the HTTP server."
-  default     = null
-}
+# variable "common_http_ip" {
+#   type        = string
+#   description = "Define an IP address on the host to use for the HTTP server."
+#   default     = null
+# }
 
-variable "common_http_port_min" {
-  type        = number
-  description = "The start of the HTTP port range."
-}
+# variable "common_http_port_min" {
+#   type        = number
+#   description = "The start of the HTTP port range."
+# }
 
-variable "common_http_port_max" {
-  type        = number
-  description = "The end of the HTTP port range."
-}
+# variable "common_http_port_max" {
+#   type        = number
+#   description = "The end of the HTTP port range."
+# }
 
 variable "vm_boot_order" {
   type        = string
@@ -288,15 +288,15 @@ variable "vm_boot_wait" {
   description = "The time to wait before boot."
 }
 
-variable "common_ip_wait_timeout" {
-  type        = string
-  description = "Time to wait for guest operating system IP address response."
-}
+# variable "common_ip_wait_timeout" {
+#   type        = string
+#   description = "Time to wait for guest operating system IP address response."
+# }
 
-variable "common_shutdown_timeout" {
-  type        = string
-  description = "Time to wait for guest operating system shutdown."
-}
+# variable "common_shutdown_timeout" {
+#   type        = string
+#   description = "Time to wait for guest operating system shutdown."
+# }
 
 // Communicator Settings and Credentials
 
@@ -324,30 +324,30 @@ variable "build_key" {
   sensitive   = true
 }
 
-variable "communicator_proxy_host" {
-  type        = string
-  description = "A SOCKS proxy host to use for SSH connection."
-  default     = null
-}
+# variable "communicator_proxy_host" {
+#   type        = string
+#   description = "A SOCKS proxy host to use for SSH connection."
+#   default     = null
+# }
 
-variable "communicator_proxy_port" {
-  type        = number
-  description = "A port of the SOCKS proxy."
-  default     = null
-}
+# variable "communicator_proxy_port" {
+#   type        = number
+#   description = "A port of the SOCKS proxy."
+#   default     = null
+# }
 
-variable "communicator_proxy_username" {
-  type        = string
-  description = "The optional username to authenticate with the proxy server."
-  default     = null
-}
+# variable "communicator_proxy_username" {
+#   type        = string
+#   description = "The optional username to authenticate with the proxy server."
+#   default     = null
+# }
 
-variable "communicator_proxy_password" {
-  type        = string
-  description = "The optional password to use to authenticate with the proxy server."
-  sensitive   = true
-  default     = null
-}
+# variable "communicator_proxy_password" {
+#   type        = string
+#   description = "The optional password to use to authenticate with the proxy server."
+#   sensitive   = true
+#   default     = null
+# }
 
 variable "communicator_port" {
   type        = string
@@ -375,8 +375,8 @@ variable "ansible_key" {
 
 // HCP Packer Settings
 
-variable "common_hcp_packer_registry_enabled" {
-  type        = bool
-  description = "Enable the HCP Packer registry."
-  default     = false
-}
+# variable "common_hcp_packer_registry_enabled" {
+#   type        = bool
+#   description = "Enable the HCP Packer registry."
+#   default     = false
+# }
