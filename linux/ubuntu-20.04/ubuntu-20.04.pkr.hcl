@@ -111,8 +111,10 @@ source "vsphere-iso" "ubuntu" {
 #   ssh_proxy_port     = var.communicator_proxy_port
 #   ssh_proxy_username = var.communicator_proxy_username
 #   ssh_proxy_password = var.communicator_proxy_password
-  ssh_username       = var.build_username
-  ssh_password       = var.build_password
+  # ssh_username       = var.build_username
+  # ssh_password       = var.build_password
+  ssh_username       = "ubuntu"
+  ssh_password       = "ubuntu"
   ssh_port           = var.communicator_port
   ssh_timeout        = var.communicator_timeout
 
@@ -173,32 +175,32 @@ build {
 #     ]
 #   }
 
-  post-processor "manifest" {
-    output     = local.manifest_output
-    strip_path = true
-    strip_time = true
-    custom_data = {
-      ansible_username         = var.build_username
-      build_username           = var.build_username
-      build_date               = local.build_date
-      build_version            = local.build_version
-    #   common_data_source       = var.common_data_source
-    #   common_vm_version        = var.common_vm_version
-      vm_cpu_cores             = var.vm_cpu_cores
-      vm_cpu_count             = var.vm_cpu_count
-      vm_disk_size             = var.vm_disk_size
-      vm_disk_thin_provisioned = var.vm_disk_thin_provisioned
-      vm_firmware              = var.vm_firmware
-      vm_guest_os_type         = var.vm_guest_os_type
-      vm_mem_size              = var.vm_mem_size
-      vm_network_card          = var.vm_network_card
-      vsphere_cluster          = var.vsphere_cluster
-      vsphere_datacenter       = var.vsphere_datacenter
-      vsphere_datastore        = var.vsphere_datastore
-      vsphere_endpoint         = var.vsphere_server
-      vsphere_folder           = var.vsphere_folder
-    }
-  }
+  # post-processor "manifest" {
+  #   output     = local.manifest_output
+  #   strip_path = true
+  #   strip_time = true
+  #   custom_data = {
+  #     ansible_username         = var.build_username
+  #     build_username           = var.build_username
+  #     build_date               = local.build_date
+  #     build_version            = local.build_version
+  #   #   common_data_source       = var.common_data_source
+  #   #   common_vm_version        = var.common_vm_version
+  #     vm_cpu_cores             = var.vm_cpu_cores
+  #     vm_cpu_count             = var.vm_cpu_count
+  #     vm_disk_size             = var.vm_disk_size
+  #     vm_disk_thin_provisioned = var.vm_disk_thin_provisioned
+  #     vm_firmware              = var.vm_firmware
+  #     vm_guest_os_type         = var.vm_guest_os_type
+  #     vm_mem_size              = var.vm_mem_size
+  #     vm_network_card          = var.vm_network_card
+  #     vsphere_cluster          = var.vsphere_cluster
+  #     vsphere_datacenter       = var.vsphere_datacenter
+  #     vsphere_datastore        = var.vsphere_datastore
+  #     vsphere_endpoint         = var.vsphere_server
+  #     vsphere_folder           = var.vsphere_folder
+  #   }
+  # }
 
 #   dynamic "hcp_packer_registry" {
 #     for_each = var.common_hcp_packer_registry_enabled ? [1] : []
