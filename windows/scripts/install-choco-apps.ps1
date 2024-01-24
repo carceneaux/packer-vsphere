@@ -3,9 +3,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 choco install -y --package-parameters=/SSHServerFeature openssh
 choco install -y 7zip
-choco install -y adobereader
 choco install -y autoruns
 choco install -y BGInfo
 choco install -y git
 choco install -y logexpert
+choco install -y wintail
 choco install -y notepad2

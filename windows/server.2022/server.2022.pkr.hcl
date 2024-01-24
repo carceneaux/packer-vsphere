@@ -1,8 +1,12 @@
 packer {
   required_plugins {
     windows-update = {
-      version = "0.14.1"
-      source = "github.com/rgl/windows-update"
+      version = "0.15.0"
+      source  = "github.com/rgl/windows-update"
+    }
+    vsphere = {
+      version = "= 1.2.4"
+      source  = "github.com/hashicorp/vsphere"
     }
   }
 }
@@ -23,6 +27,8 @@ source "vsphere-iso" "server-2022" {
   guest_os_type        = "windows2019srv_64Guest"
   insecure_connection  = "true"
   iso_paths            = ["${var.iso_path}", "[] /vmimages/tools-isoimages/windows.iso"]
+  remove_cdrom         = true
+  reattach_cdroms      = 1
   cd_files = [
     "../scripts/"
   ]
