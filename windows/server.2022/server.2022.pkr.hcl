@@ -56,14 +56,14 @@ source "vsphere-iso" "server-2022" {
 build {
   sources = ["source.vsphere-iso.server-2022"]
 
-  provisioner "windows-shell" {
-    inline = ["ipconfig"]
-  }
-
   provisioner "windows-update" {
     filters         = ["exclude:$_.Title -like '*Preview*'", "include:$true"]
     search_criteria = "IsInstalled=0"
     update_limit    = 25
+  }
+
+  provisioner "windows-restart" {
+    restart_timeout = 30
   }
 
 }
