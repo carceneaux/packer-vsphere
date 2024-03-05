@@ -63,7 +63,7 @@ build {
   }
 
   provisioner "windows-restart" {
-    restart_timeout = 30
+    restart_timeout = "30m"
   }
 
 }
